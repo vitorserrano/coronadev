@@ -11,14 +11,14 @@ import {
   CardDescription,
 } from "./styles";
 
-import isolation from "../../assets/isolation.png";
+import distance from "../../assets/distance.png";
 import mask from "../../assets/mask.png";
 import wash from "../../assets/wash.png";
 
 const items = [
   {
     key: String(Math.random()),
-    img: isolation,
+    img: distance,
     label: "Manter distância",
   },
   {
@@ -43,8 +43,8 @@ export default Preventions = () => {
           <View key={item.key}>
             <CardImageCover>
               <CardImage source={item.img}></CardImage>
+              <CardDescription>{item.label}</CardDescription>
             </CardImageCover>
-            <CardDescription>{item.label}</CardDescription>
           </View>
         ))}
       </Card>

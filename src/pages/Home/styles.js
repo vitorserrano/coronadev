@@ -2,16 +2,11 @@ import styled from 'styled-components/native';
 
 export const Wrapper = styled.SafeAreaView`
     flex: 1;
+    background: #fff;
 `;
 
-export const Container = styled.ScrollView``;
-
-export const Header = styled.View`
-    padding: 40px 30px;
-    height: 360px;
-    background: #7402fd;
-    border-bottom-left-radius: 55px;
-    border-bottom-right-radius: 55px;
+export const Container = styled.ScrollView`
+    padding: 40px 20px;
 `;
 
 export const Navbar = styled.View`
@@ -24,21 +19,34 @@ export const Map = styled.TouchableOpacity``;
 
 export const Logo = styled.Text`
     font-size: 24px;
+    color: #473F97;
     font-weight: bold;
-    color: #fff;
     text-align: center;
+`;
+
+export const LogoBold = styled.Text`
+    font-size: 24px;
+    font-weight: bold;
+    color: #F25658;
+    text-align: center;
+`;
+
+export const Header = styled.View`
+    margin-top: 20px;
+    padding: 30px 20px;
+    background-color: #473F97;
+    border-radius: 20px;
 `;
 
 export const Title = styled.Text`
     color: #fff;
-    margin-top: 40px;
     font-size: 20px;
     font-weight: bold;
 `;
 
 export const Description = styled.Text`
-    color: #fff;
-    margin-top: 10px;
+    color: #fdfdfd;
+    margin-top: 20px;
     font-size: 14px;
     line-height: 22px;
 `;
@@ -51,11 +59,13 @@ export const Situation = styled.TouchableOpacity`
 
 export const SituationButton = styled.TouchableOpacity`
     height: 55px;
-    width: 160px;
-    border-radius: 50px;
+    width: 150px;
+    border-radius: 6px;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    background: #F25658;
+    border-radius: 20px;
 `;
 
 export const SituationText = styled.Text`

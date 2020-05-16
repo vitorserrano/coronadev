@@ -1,66 +1,68 @@
-import React from 'react';
-import { Linking } from 'react-native';
+import React from "react";
+import { Linking } from "react-native";
 
-import { Fontisto, Feather, MaterialCommunityIcons } from '@expo/vector-icons'; 
+import { Fontisto, Feather, MaterialCommunityIcons } from "@expo/vector-icons";
 
-import { 
-    Wrapper, 
-    Container, 
-    Header,
-    Navbar,
-    Logo,
-    Map,
-    Title,
-    Description,
-    Situation,
-    SituationButton,
-    SituationText,
-} from './styles';
+import {
+  Wrapper,
+  Container,
+  Navbar,
+  Logo,
+  LogoBold,
+  Map,
+  Header,
+  Title,
+  Description,
+  Situation,
+  SituationButton,
+  SituationText,
+} from "./styles";
 
-import Preventions from '../../components/Preventions';
-import Banner from '../../components/Banner';
+import Preventions from "../../components/Preventions";
 
 const loadGoogleMaps = () => {
-    Linking.openURL('https://news.google.com/covid19/map?hl=pt-BR&gl=BR&ceid=BR:pt-419');
-}
+  Linking.openURL(
+    "https://news.google.com/covid19/map?hl=pt-BR&gl=BR&ceid=BR:pt-419"
+  );
+};
 
 export default Home = () => {
-    return (
-        <Wrapper>
-            <Container>
-                <Header>
-                    <Navbar>
-                        <Logo>CoronaDev</Logo>
-                    
-                        <Map onPress={loadGoogleMaps}>
-                            <MaterialCommunityIcons name="google-maps" size={32} color="#fff" />
-                        </Map>
-                    </Navbar>
+  return (
+    <Wrapper>
+      <Container>
+        <Navbar>
+          <Logo>Corona<LogoBold>Dev</LogoBold></Logo>
 
-                    <Title>
-                        O que é Corona vírus?
-                    </Title>
+          <Map onPress={loadGoogleMaps}>
+            <MaterialCommunityIcons name="google-maps" size={32} color="#F25658" />
+          </Map>
+        </Navbar>
 
-                    <Description>
-                        O coronavírus é uma doença causada por um novo vírus que causa sintomas semelhantes á gripe de forma leve a grave.
-                    </Description>
+        <Header>
+          <Title>Corona vírus</Title>
 
-                    <Situation>
-                        <SituationButton style={{ backgroundColor: '#ff5959'}}>
-                            <Fontisto name="world-o" size={24} color="#fff" />
-                            <SituationText>Mundo</SituationText>
-                        </SituationButton>
+          <Description>
+            O coronavírus (COVID-19) é uma doença infecciosa causada por um novo vírus.
+          </Description>
+          <Description>
+          Ele causa problemas respiratórios semelhantes à gripe e sintomas como tosse, febre e, em casos mais graves, dificuldade para respirar.
+          </Description>
 
-                        <SituationButton style={{ backgroundColor: '#4cb5ff' }}>
-                            <Feather name="flag" size={24} color="#fff" />
-                            <SituationText>Países</SituationText>
-                        </SituationButton>
-                    </Situation>
-                </Header>
+          <Situation>
+            <SituationButton>
+              <Fontisto name="world-o" size={24} color="#fff" />
+              <SituationText>Mundo</SituationText>
+            </SituationButton>
 
-                <Preventions />
-                <Banner />
-            </Container>
-        </Wrapper>
-    );
+            <SituationButton>
+              <Feather name="flag" size={24} color="#fff" />
+              <SituationText>Países</SituationText>
+            </SituationButton>
+          </Situation>
+        </Header>
+
+        <Preventions />
+      </Container>
+    </Wrapper>
+  );
 };

@@ -1,39 +1,44 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.ScrollView`
-    padding: 30px; 
+    margin-top: 20px;
 `;
 
 export const Title = styled.Text`
-    color: #333;
+    color: rgb(75, 75, 75);
     font-weight: bold;
     font-size: 20px;
+    margin-bottom: 20px;
 `;
-export const Card = styled.View`
-    margin-top: 30px;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
+
+export const Card = styled.ScrollView.attrs(() => ({
+    horizontal: true,
+    showsHorizontalScrollIndicator: false,
+    contentContainerStyle: {
+        alignItems: 'center',
+    },
+}))`
 `;
 
 export const CardImageCover = styled.View`
-    width: 100px;
-    height: 100px;
-    background: #efe4fd;
-    border-radius: 60px;
+    width: 150px;
+    height: 200px;
+    background:  #FAD3D4;
+    border-radius: 15px;
     justify-content: center;
     align-items: center;
+    margin-right: 16px;
 `;
 
 export const CardImage = styled.Image.attrs(() => ({
     resizeMode: "contain",
 }))`
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
 `;
 
 export const CardDescription = styled.Text`
-    color: #333;
+    color: #F25658;
     font-size: 14px;
     font-weight: bold;
     margin-top: 10px;
