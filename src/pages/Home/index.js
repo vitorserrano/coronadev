@@ -34,6 +34,10 @@ export default Home = () => {
   const navigateToGlobal = () => {
     navigation.navigate('Global');
   };
+
+  const navigateToCountries = () => {
+    navigation.navigate('Countries');
+  };
   
   return (
     <Wrapper>
@@ -67,7 +71,9 @@ export default Home = () => {
               <SituationText>Mundo</SituationText>
             </SituationButton>
 
-            <SituationButton>
+            <SituationButton 
+              onPress={navigateToCountries}
+            >
               <Feather name="flag" size={24} color="#fff" />
               <SituationText>Países</SituationText>
             </SituationButton>
