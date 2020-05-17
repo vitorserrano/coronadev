@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useNavigation } from "@react-navigation/native";
-import { Text, View } from "react-native";
+import { ActivityIndicator } from "react-native";
 
 import api from "../../services/api";
 
-import { 
-  Wrapper, 
-  Container, 
+import {
+  Wrapper,
+  Container,
   Content,
   Title,
   Description,
@@ -18,16 +17,17 @@ import {
   CardDescription,
 } from "./styles";
 
-
-
 import GoBack from "../../components/GoBack";
 import SubTitle from "../../components/SubTitle";
 
 export default Global = () => {
+  const [loading, setLoading] = useState(false);
   const [cases, setCases] = useState([]);
 
   useEffect(() => {
     const loadGlobal = async () => {
+      setLoading(true);
+
       try {
         const response = await api.get("/summary");
         const { Global } = response.data;
@@ -36,6 +36,8 @@ export default Global = () => {
       } catch (error) {
         alert(error.message);
       }
+
+      setLoading(false);
     };
 
     loadGlobal();
@@ -50,19 +52,25 @@ export default Global = () => {
           <Title>Situação Global</Title>
           <SubTitle />
 
-          <Description>A atual situação do covid-19 no mundo é muito preocupante, por isso é necessário que cada pessoa faça a sua parte, se prevenindo do vírus.</Description>
+          <Description>
+            A atual situação do covid-19 no mundo é muito preocupante, por isso
+            é necessário que cada pessoa faça a sua parte, se prevenindo do
+            vírus.
+          </Description>
 
           <Card style={{ backgroundColor: "#FBB159" }}>
             <CardTitle>Confirmados</CardTitle>
 
             <CardCases>
               <CardInfo>
-                <CardNumber>{cases.TotalConfirmed}</CardNumber>
+                {!loading && <CardNumber>{cases.TotalConfirmed}</CardNumber>}
+                {loading && <ActivityIndicator color="#fff" />}
                 <CardDescription>Acumulados</CardDescription>
               </CardInfo>
-              
+
               <CardInfo>
-                <CardNumber>{cases.NewConfirmed}</CardNumber>
+                {!loading && <CardNumber>{cases.NewConfirmed}</CardNumber>}
+                {loading && <ActivityIndicator color="#fff" />}
                 <CardDescription>Registros novos</CardDescription>
               </CardInfo>
             </CardCases>
@@ -73,12 +81,14 @@ export default Global = () => {
 
             <CardCases>
               <CardInfo>
-                <CardNumber>{cases.TotalDeaths}</CardNumber>
+                {!loading && <CardNumber>{cases.TotalDeaths}</CardNumber>}
+                {loading && <ActivityIndicator color="#fff" />}
                 <CardDescription>Acumulados</CardDescription>
               </CardInfo>
-              
+
               <CardInfo>
-                <CardNumber>{cases.NewDeaths}</CardNumber>
+                {!loading && <CardNumber>{cases.NewDeaths}</CardNumber>}
+                {loading && <ActivityIndicator color="#fff" />}
                 <CardDescription>Registros novos</CardDescription>
               </CardInfo>
             </CardCases>
@@ -89,12 +99,14 @@ export default Global = () => {
 
             <CardCases>
               <CardInfo>
-                <CardNumber>{cases.TotalRecovered}</CardNumber>
+                {!loading && <CardNumber>{cases.TotalRecovered}</CardNumber>}
+                {loading && <ActivityIndicator color="#fff" />}
                 <CardDescription>Acumulados</CardDescription>
               </CardInfo>
-              
+
               <CardInfo>
-                <CardNumber>{cases.NewRecovered}</CardNumber>
+                {!loading && <CardNumber>{cases.NewRecovered}</CardNumber>}
+                {loading && <ActivityIndicator color="#fff" />}
                 <CardDescription>Registros novos</CardDescription>
               </CardInfo>
             </CardCases>
