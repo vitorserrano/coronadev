@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigation } from '@react-navigation/native';
 import { Linking } from "react-native";
 
 import { Fontisto, Feather, MaterialCommunityIcons } from "@expo/vector-icons";
@@ -28,6 +29,12 @@ const loadGoogleMaps = () => {
 };
 
 export default Home = () => {
+  const navigation = useNavigation();
+
+  const navigateToGlobal = () => {
+    navigation.navigate('Global');
+  };
+  
   return (
     <Wrapper>
       <Container>
@@ -50,12 +57,16 @@ export default Home = () => {
           <Description>
             O coronavírus (COVID-19) é uma doença infecciosa causada por um novo vírus.
           </Description>
+
           <Description>
           Ele causa problemas respiratórios semelhantes à gripe e sintomas como tosse, febre e, em casos mais graves, dificuldade para respirar.
           </Description>
 
           <Situation>
-            <SituationButton style={{ backgroundColor: "#7159c1" }}>
+            <SituationButton 
+              style={{ backgroundColor: "#7159c1" }}
+              onPress={navigateToGlobal}
+            >
               <Fontisto name="world-o" size={24} color="#fff" />
               <SituationText>Mundo</SituationText>
             </SituationButton>
