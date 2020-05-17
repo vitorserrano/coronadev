@@ -10,6 +10,10 @@ import {
   Content,
   Title,
   Description,
+  Card,
+  CardTitle,
+  CardNumber,
+  CardDescription,
 } from "./styles";
 
 import GoBack from "../../components/GoBack";
@@ -42,7 +46,26 @@ export default Global = () => {
           <Title>Situação Global</Title>
           <SubTitle />
 
-          <Description>A atual situação do covid-19 no mundo é muito preocupante, por isso é necessário que cada pessoa faça a sua parte, se prevenindo da doença.</Description>
+          <Description>A atual situação do covid-19 no mundo é muito preocupante, por isso é necessário que cada pessoa faça a sua parte, se prevenindo do vírus.</Description>
+
+          <Card style={{ backgroundColor: "#FBB159" }}>
+            <CardTitle>Confirmados</CardTitle>
+            <CardNumber>33.040</CardNumber>
+            <CardDescription>Acumulados</CardDescription>
+            <CardDescription>Novos casos: </CardDescription>
+          </Card>
+
+          <Card style={{ backgroundColor: "#F25658" }}>
+            <CardTitle>Óbitos</CardTitle>
+            <CardDescription>Total de casos: </CardDescription>
+            <CardDescription>Novos casos: </CardDescription>
+          </Card>
+
+          <Card style={{ backgroundColor: "#4DB4FB" }}>
+            <CardTitle>Recuperados</CardTitle>
+            <CardDescription>Total de casos: </CardDescription>
+            <CardDescription>Novos casos: </CardDescription>
+          </Card>
         </Content>
       </Container>
     </Wrapper>

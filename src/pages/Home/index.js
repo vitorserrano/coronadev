@@ -13,7 +13,6 @@ import {
   Map,
   Header,
   Title,
-  SubTitle,
   Description,
   Situation,
   SituationButton,
@@ -21,6 +20,7 @@ import {
 } from "./styles";
 
 import Preventions from "../../components/Preventions";
+import SubTitle from '../../components/SubTitle';
 
 const loadGoogleMaps = () => {
   Linking.openURL(
@@ -48,11 +48,7 @@ export default Home = () => {
 
         <Header>
           <Title>O que é Corona vírus?</Title>
-          <SubTitle>
-            <Feather name="x" size={20} color="#fff" />
-            <Feather name="x" size={20} color="#7159c1" />
-            <Feather name="x" size={20} color="#04D361" />
-          </SubTitle>
+          <SubTitle />
 
           <Description>
             O coronavírus (COVID-19) é uma doença infecciosa causada por um novo vírus.
