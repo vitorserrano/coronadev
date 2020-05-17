@@ -27,10 +27,10 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 ## :heavy_check_mark: Resultado
 
 <h4 align="center">
-    <img alt="Brazil" title="#home" width="300px" src=".github/Home.png">
-    <img alt="Global" title="#global" width="300px" src=".github/Global.png">
-    <img alt="Countries" title="#countries" width="300px" src=".github/Countries.png">
-    <img alt="Brazil" title="#brazil" width="300px" src=".github/Brazil.png">
+    <img alt="Brazil" title="#home" width="350px" src=".github/Home.png">
+    <img alt="Global" title="#global" width="350px" src=".github/Global.png">
+    <img alt="Countries" title="#countries" width="350px" src=".github/Countries.png">
+    <img alt="Brazil" title="#brazil" width="350px" src=".github/Brazil.png">
 </h4>
 
 <a id="como-usar"></a>
