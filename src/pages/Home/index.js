@@ -12,6 +12,7 @@ import {
   Map,
   Header,
   Title,
+  SubTitle,
   Description,
   Situation,
   SituationButton,
@@ -31,15 +32,20 @@ export default Home = () => {
     <Wrapper>
       <Container>
         <Navbar>
-          <Logo>Corona<LogoBold>Dev</LogoBold></Logo>
+          <Logo>corona<LogoBold>dev</LogoBold></Logo>
 
           <Map onPress={loadGoogleMaps}>
-            <MaterialCommunityIcons name="google-maps" size={32} color="#F25658" />
+            <MaterialCommunityIcons name="google-maps" size={28} color="#7159c1" />
           </Map>
         </Navbar>
 
         <Header>
-          <Title>Corona vírus</Title>
+          <Title>O que é Corona vírus?</Title>
+          <SubTitle>
+            <Feather name="x" size={20} color="#fff" />
+            <Feather name="x" size={20} color="#7159c1" />
+            <Feather name="x" size={20} color="#04D361" />
+          </SubTitle>
 
           <Description>
             O coronavírus (COVID-19) é uma doença infecciosa causada por um novo vírus.
@@ -49,7 +55,7 @@ export default Home = () => {
           </Description>
 
           <Situation>
-            <SituationButton>
+            <SituationButton style={{ backgroundColor: "#7159c1" }}>
               <Fontisto name="world-o" size={24} color="#fff" />
               <SituationText>Mundo</SituationText>
             </SituationButton>

@@ -5,7 +5,7 @@ export const Container = styled.ScrollView`
 `;
 
 export const Title = styled.Text`
-    color: rgb(75, 75, 75);
+    color: #fff;
     font-weight: bold;
     font-size: 20px;
     margin-bottom: 20px;
@@ -23,7 +23,7 @@ export const Card = styled.ScrollView.attrs(() => ({
 export const CardImageCover = styled.View`
     width: 150px;
     height: 200px;
-    background:  #FAD3D4;
+    background:  #202024;
     border-radius: 15px;
     justify-content: center;
     align-items: center;
@@ -38,8 +38,9 @@ export const CardImage = styled.Image.attrs(() => ({
 `;
 
 export const CardDescription = styled.Text`
-    color: #F25658;
+    color: #A8A8B3;
     font-size: 14px;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 20px;
 `;
+

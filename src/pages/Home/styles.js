@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 export const Wrapper = styled.SafeAreaView`
     flex: 1;
-    background: #fff;
+    background: #121214;
 `;
 
 export const Container = styled.ScrollView`
@@ -18,34 +18,39 @@ export const Navbar = styled.View`
 export const Map = styled.TouchableOpacity``;
 
 export const Logo = styled.Text`
-    font-size: 24px;
-    color: #473F97;
+    font-size: 20px;
+    color: #fff;
     font-weight: bold;
     text-align: center;
 `;
 
 export const LogoBold = styled.Text`
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
-    color: #F25658;
+    color: #04D361;
     text-align: center;
 `;
 
 export const Header = styled.View`
     margin-top: 20px;
     padding: 30px 20px;
-    background-color: #473F97;
+    background-color: #202024;
     border-radius: 20px;
 `;
 
 export const Title = styled.Text`
     color: #fff;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
 `;
 
+export const SubTitle = styled.View`
+    flex-direction: row;
+    margin-top: 5px;
+`;
+
 export const Description = styled.Text`
-    color: #fdfdfd;
+    color: #A8A8B3;
     margin-top: 20px;
     font-size: 14px;
     line-height: 22px;
@@ -60,12 +65,11 @@ export const Situation = styled.TouchableOpacity`
 export const SituationButton = styled.TouchableOpacity`
     height: 55px;
     width: 150px;
-    border-radius: 6px;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background: #F25658;
-    border-radius: 20px;
+    background: #04D361;
+    border-radius: 10px;
 `;
 
 export const SituationText = styled.Text`
@@ -74,3 +78,4 @@ export const SituationText = styled.Text`
     font-size: 16px;
     margin-left: 10px;
 `;
+

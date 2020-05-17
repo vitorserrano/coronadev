@@ -11,6 +11,7 @@ import {
   CardDescription,
 } from "./styles";
 
+import stayAtHome from "../../assets/stay-at-home.png"
 import distance from "../../assets/distance.png";
 import mask from "../../assets/mask.png";
 import wash from "../../assets/wash.png";
@@ -18,8 +19,8 @@ import wash from "../../assets/wash.png";
 const items = [
   {
     key: String(Math.random()),
-    img: distance,
-    label: "Manter distância",
+    img: stayAtHome,
+    label: "Fique em casa",
   },
   {
     key: String(Math.random()),
@@ -30,6 +31,11 @@ const items = [
     key: String(Math.random()),
     img: wash,
     label: "Lavar as mãos",
+  },
+  {
+    key: String(Math.random()),
+    img: distance,
+    label: "Manter distância",
   },
 ];
 
