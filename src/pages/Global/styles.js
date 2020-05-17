@@ -22,12 +22,13 @@ export const Title = styled.Text`
 export const Description = styled.Text`
   color: #a8a8b3;
   margin-top: 20px;
+  margin-bottom: 40px;
   font-size: 14px;
   line-height: 22px;
 `;
 
 export const Card = styled.View`
-    margin: 20px 0;
+    margin-bottom: 40px;
     padding: 15px 20px;
     border-radius: 10px;
 `;
@@ -39,14 +40,21 @@ export const CardTitle = styled.Text`
     font-weight: bold;
 `;
 
+export const CardCases = styled.View`
+    flex-direction: row;
+`;
+
+export const CardInfo = styled.View`
+    margin-right: 20px;
+`;
+
 export const CardNumber = styled.Text`
-    font-size: 18px;
-    margin-bottom: 5px;
+    font-size: 20px;
     color: #fff;
     font-weight: bold;
 `;
 
 export const CardDescription = styled.Text`
-    font-size: 16px;
+    font-size: 14px;
     color: #fff;
 `;

@@ -12,9 +12,13 @@ import {
   Description,
   Card,
   CardTitle,
+  CardCases,
+  CardInfo,
   CardNumber,
   CardDescription,
 } from "./styles";
+
+
 
 import GoBack from "../../components/GoBack";
 import SubTitle from "../../components/SubTitle";
@@ -22,20 +26,20 @@ import SubTitle from "../../components/SubTitle";
 export default Global = () => {
   const [cases, setCases] = useState([]);
 
-  // useEffect(() => {
-  //   const loadGlobal = async () => {
-  //     try {
-  //       const response = await api.get("/summary");
-  //       const { Global } = response.data;
+  useEffect(() => {
+    const loadGlobal = async () => {
+      try {
+        const response = await api.get("/summary");
+        const { Global } = response.data;
 
-  //       setCases(Global);
-  //     } catch (error) {
-  //       alert(error.message);
-  //     }
-  //   };
+        setCases(Global);
+      } catch (error) {
+        alert(error.message);
+      }
+    };
 
-  //   loadGlobal();
-  // }, []);
+    loadGlobal();
+  }, []);
 
   return (
     <Wrapper>
@@ -50,28 +54,53 @@ export default Global = () => {
 
           <Card style={{ backgroundColor: "#FBB159" }}>
             <CardTitle>Confirmados</CardTitle>
-            <CardNumber>33.040</CardNumber>
-            <CardDescription>Acumulados</CardDescription>
-            <CardDescription>Novos casos: </CardDescription>
+
+            <CardCases>
+              <CardInfo>
+                <CardNumber>{cases.TotalConfirmed}</CardNumber>
+                <CardDescription>Acumulados</CardDescription>
+              </CardInfo>
+              
+              <CardInfo>
+                <CardNumber>{cases.NewConfirmed}</CardNumber>
+                <CardDescription>Registros novos</CardDescription>
+              </CardInfo>
+            </CardCases>
           </Card>
 
           <Card style={{ backgroundColor: "#F25658" }}>
             <CardTitle>Óbitos</CardTitle>
-            <CardDescription>Total de casos: </CardDescription>
-            <CardDescription>Novos casos: </CardDescription>
+
+            <CardCases>
+              <CardInfo>
+                <CardNumber>{cases.TotalDeaths}</CardNumber>
+                <CardDescription>Acumulados</CardDescription>
+              </CardInfo>
+              
+              <CardInfo>
+                <CardNumber>{cases.NewDeaths}</CardNumber>
+                <CardDescription>Registros novos</CardDescription>
+              </CardInfo>
+            </CardCases>
           </Card>
 
-          <Card style={{ backgroundColor: "#4DB4FB" }}>
+          <Card style={{ backgroundColor: "#4DB4FB", marginBottom: 60 }}>
             <CardTitle>Recuperados</CardTitle>
-            <CardDescription>Total de casos: </CardDescription>
-            <CardDescription>Novos casos: </CardDescription>
+
+            <CardCases>
+              <CardInfo>
+                <CardNumber>{cases.TotalRecovered}</CardNumber>
+                <CardDescription>Acumulados</CardDescription>
+              </CardInfo>
+              
+              <CardInfo>
+                <CardNumber>{cases.NewRecovered}</CardNumber>
+                <CardDescription>Registros novos</CardDescription>
+              </CardInfo>
+            </CardCases>
           </Card>
         </Content>
       </Container>
     </Wrapper>
-
-    // <View>
-    //   <Text style={{ marginTop: 100 }}>{cases.NewConfirmed}</Text>
-    // </View>
   );
 };
