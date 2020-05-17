@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './pages/Home';
 import Global from './pages/Global';
 import Countries from './pages/Countries';
+import DetailsCountry from './pages/DetailsCountry';
 
 const AppStack = createStackNavigator();
 
@@ -16,6 +17,7 @@ export default function Routes() {
                 <AppStack.Screen name="Home" component={Home} />
                 <AppStack.Screen name="Global" component={Global} />
                 <AppStack.Screen name="Countries" component={Countries} />
+                <AppStack.Screen name="DetailsCountry" component={DetailsCountry} />
             </AppStack.Navigator>
         </NavigationContainer>
     );

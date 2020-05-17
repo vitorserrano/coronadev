@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { ActivityIndicator } from "react-native";
+
+import { useNavigation, useRoute } from "@react-navigation/native";
 
 import {
   Wrapper,
@@ -7,6 +8,8 @@ import {
   Content,
   Title,
   Description,
+  SearchBar,
+  Search,
   List,
   ListItem,
   ListTitle,
@@ -14,33 +17,28 @@ import {
 
 import { Ionicons } from "@expo/vector-icons";
 
-import api from "../../services/api";
-
 import GoBack from "../../components/GoBack";
 import SubTitle from "../../components/SubTitle";
 
 export default Countries = () => {
-  const [loading, setLoading] = useState(false);
-  const [countries, setcountries] = useState([]);
+  const navigation = useNavigation();
+  const route = useRoute();
+
+  const { countries } = route.params;
+
+  const [search, setSearch] = useState("");
+  const [filter, setFilter] = useState(countries);
 
   useEffect(() => {
-    const loadCountries = async () => {
-      setLoading(true);
+    const result = countries.filter((country) =>
+      country.Country.toLowerCase().includes(search.toLowerCase())
+    );
+    setFilter(result);
+  }, [search]);
 
-      try {
-        const response = await api.get("/summary");
-        const { Countries } = response.data;
-
-        setcountries(Countries);
-      } catch (error) {
-        alert(error.message);
-      }
-
-      setLoading(false);
-    };
-
-    loadCountries();
-  }, []);
+  navigateToDetails = (countrie) => {
+    navigation.navigate("DetailsCountry", { detail: countrie });
+  };
 
   return (
     <Wrapper>
@@ -56,25 +54,34 @@ export default Countries = () => {
             sua parte e ajude o mundo a vencer esse vírus.
           </Description>
 
-          {!loading && (
-            <List
-              data={countries}
-              keyExtractor={(countries) => String(countries.CountryCode)}
-              showsVerticalScrollIndicator={false}
-              renderItem={({ item: countrie }) => (
-                <ListItem>
-                  <ListTitle>{countrie.Country}</ListTitle>
-                  <Ionicons
-                    name="ios-arrow-round-forward"
-                    size={32}
-                    color="#04D361"
-                  />
-                </ListItem>
-              )}
+          <SearchBar>
+            <Search
+              value={search}
+              onChangeText={setSearch}
+              placeholder="Procure um país..."
             />
-          )}
+            <Ionicons name="ios-search" size={24} color="#7159c1" />
+          </SearchBar>
 
-          {loading && <ActivityIndicator color="#04D361" size={"large"}/>}
+          <List
+            data={filter}
+            keyExtractor={(countries) => String(countries.Country)}
+            showsVerticalScrollIndicator={false}
+            renderItem={({ item: countrie }) => (
+              <ListItem
+                onPress={() => {
+                  navigateToDetails(countrie);
+                }}
+              >
+                <ListTitle>{countrie.Country}</ListTitle>
+                <Ionicons
+                  name="ios-arrow-round-forward"
+                  size={32}
+                  color="#04D361"
+                />
+              </ListItem>
+            )}
+          />
         </Content>
       </Container>
     </Wrapper>

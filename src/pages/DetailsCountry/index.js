@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useRoute } from "@react-navigation/native"; 
+import { useRoute } from "@react-navigation/native";
 
 import {
   Wrapper,
@@ -19,10 +19,10 @@ import {
 import GoBack from "../../components/GoBack";
 import SubTitle from "../../components/SubTitle";
 
-export default Global = () => {
+export default DetailsCountry = () => {
   const route = useRoute();
 
-  const { global } = route.params;
+  const { detail } = route.params;
 
   return (
     <Wrapper>
@@ -30,13 +30,13 @@ export default Global = () => {
         <GoBack />
 
         <Content>
-          <Title>Situação Global</Title>
+          <Title>{detail.Country}</Title>
           <SubTitle />
 
           <Description>
-            A atual situação do covid-19 no mundo é muito preocupante, por isso
-            é necessário que cada pessoa faça a sua parte, se prevenindo do
-            vírus.
+            Por conta de sua fácil transmissão o novo Covid-19 se mostrou muito
+            mortal, por isso é importante cada pessoa se previnir de maneira
+            correta.
           </Description>
 
           <Card style={{ backgroundColor: "#FBB159" }}>
@@ -44,12 +44,12 @@ export default Global = () => {
 
             <CardCases>
               <CardInfo>
-                <CardNumber>{global.TotalConfirmed}</CardNumber>
+                <CardNumber>{detail.TotalConfirmed}</CardNumber>
                 <CardDescription>Acumulados</CardDescription>
               </CardInfo>
 
               <CardInfo>
-                <CardNumber>{global.NewConfirmed}</CardNumber>
+                <CardNumber>{detail.NewConfirmed}</CardNumber>
                 <CardDescription>Registros novos</CardDescription>
               </CardInfo>
             </CardCases>
@@ -60,12 +60,12 @@ export default Global = () => {
 
             <CardCases>
               <CardInfo>
-                <CardNumber>{global.TotalDeaths}</CardNumber>
+                <CardNumber>{detail.TotalDeaths}</CardNumber>
                 <CardDescription>Acumulados</CardDescription>
               </CardInfo>
 
               <CardInfo>
-                <CardNumber>{global.NewDeaths}</CardNumber>
+                <CardNumber>{detail.NewDeaths}</CardNumber>
                 <CardDescription>Registros novos</CardDescription>
               </CardInfo>
             </CardCases>
@@ -76,12 +76,12 @@ export default Global = () => {
 
             <CardCases>
               <CardInfo>
-                <CardNumber>{global.TotalRecovered}</CardNumber>
+                <CardNumber>{detail.TotalRecovered}</CardNumber>
                 <CardDescription>Acumulados</CardDescription>
               </CardInfo>
 
               <CardInfo>
-                <CardNumber>{global.NewRecovered}</CardNumber>
+                <CardNumber>{detail.NewRecovered}</CardNumber>
                 <CardDescription>Registros novos</CardDescription>
               </CardInfo>
             </CardCases>

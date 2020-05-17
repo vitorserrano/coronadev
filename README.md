@@ -26,7 +26,12 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 
 ## :heavy_check_mark: Resultado
 
-<img alt="Home" title="#home" width="300px" src=".github/Home.png">
+<h4 align="center">
+    <img alt="Brazil" title="#home" width="300px" src=".github/Home.png">
+    <img alt="Global" title="#global" width="300px" src=".github/Global.png">
+    <img alt="Countries" title="#countries" width="300px" src=".github/Countries.png">
+    <img alt="Brazil" title="#brazil" width="300px" src=".github/Brazil.png">
+</h4>
 
 <a id="como-usar"></a>
 ## :fire: Como usar

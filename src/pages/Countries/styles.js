@@ -27,9 +27,26 @@ export const Description = styled.Text`
   line-height: 22px;
 `;
 
-export const List = styled.FlatList``;
+export const SearchBar = styled.View`
+  background: #202024;
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 15px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
 
-export const ListItem = styled.View`
+export const Search = styled.TextInput`
+  width: 300px;
+  color: #fff;
+`;
+
+export const List = styled.FlatList`
+  margin-bottom: 100px;
+`;
+
+export const ListItem = styled.TouchableOpacity`
   background: #202024;
   padding: 20px 20px;
   border-radius: 15px;

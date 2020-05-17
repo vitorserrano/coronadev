@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigation } from '@react-navigation/native';
 import { Linking } from "react-native";
 
@@ -28,17 +28,37 @@ const loadGoogleMaps = () => {
   );
 };
 
+import api from "../../services/api";
+
 export default Home = () => {
   const navigation = useNavigation();
 
+  const [cases, setCases] = useState({});
+
+  useEffect(() => {
+    const loadCases = async () => {
+
+      try {
+        const { data } = await api.get("/summary");
+        
+        setCases(data);
+      } catch (error) {
+        alert(error.message);
+      }
+    };
+
+    loadCases();
+  }, []);
+
   const navigateToGlobal = () => {
-    navigation.navigate('Global');
+    navigation.navigate('Global', { global: cases.Global });
   };
 
   const navigateToCountries = () => {
-    navigation.navigate('Countries');
+    navigation.navigate('Countries', { countries: cases.Countries });
   };
   
+
   return (
     <Wrapper>
       <Container>
