@@ -50,7 +50,7 @@ export default Countries = () => {
           <SubTitle />
 
           <Description>
-            O Corona vírus está se espalhando cada vais mais nos países. Faça a
+            O Corona vírus está se espalhando cada vez mais nos países. Faça a
             sua parte e ajude o mundo a vencer esse vírus.
           </Description>
 
