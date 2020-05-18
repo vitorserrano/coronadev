@@ -14,6 +14,12 @@
 
 Ideia apresentada pela faculdade e adaptada por mim. Essa aplicação mostra a situação do Covid-19 em tempo real em todos países.
 
+## :heavy_check_mark: Resultado
+
+<h4 align="center">
+    <img alt="Video" title="#video" width="350px" src=".github/Video.gif">
+</h4>
+
 <a id="tecnologias-utilizadas"></a>
 ## :rocket: Tecnologias Utilizadas
 
@@ -24,7 +30,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 - [Expo](https://expo.io/)
 - [Styled Components](https://styled-components.com/)
 
-## :heavy_check_mark: Resultado
+## :iphone: Screens
 
 <h4 align="center">
     <img alt="Brazil" title="#home" width="350px" src=".github/Home.png">
