@@ -18,6 +18,7 @@ import {
 
 import GoBack from "../../components/GoBack";
 import SubTitle from "../../components/SubTitle";
+import numberFormatter from '../../utils/formatter'
 
 export default Global = () => {
   const route = useRoute();
@@ -44,12 +45,12 @@ export default Global = () => {
 
             <CardCases>
               <CardInfo>
-                <CardNumber>{global.TotalConfirmed}</CardNumber>
+                <CardNumber>{numberFormatter(global.TotalConfirmed)}</CardNumber>
                 <CardDescription>Acumulados</CardDescription>
               </CardInfo>
 
               <CardInfo>
-                <CardNumber>{global.NewConfirmed}</CardNumber>
+                <CardNumber>{numberFormatter(global.NewConfirmed)}</CardNumber>
                 <CardDescription>Registros novos</CardDescription>
               </CardInfo>
             </CardCases>
@@ -60,12 +61,12 @@ export default Global = () => {
 
             <CardCases>
               <CardInfo>
-                <CardNumber>{global.TotalDeaths}</CardNumber>
+                <CardNumber>{numberFormatter(global.TotalDeaths)}</CardNumber>
                 <CardDescription>Acumulados</CardDescription>
               </CardInfo>
 
               <CardInfo>
-                <CardNumber>{global.NewDeaths}</CardNumber>
+                <CardNumber>{numberFormatter(global.NewDeaths)}</CardNumber>
                 <CardDescription>Registros novos</CardDescription>
               </CardInfo>
             </CardCases>
@@ -76,12 +77,12 @@ export default Global = () => {
 
             <CardCases>
               <CardInfo>
-                <CardNumber>{global.TotalRecovered}</CardNumber>
+                <CardNumber>{numberFormatter(global.TotalRecovered)}</CardNumber>
                 <CardDescription>Acumulados</CardDescription>
               </CardInfo>
 
               <CardInfo>
-                <CardNumber>{global.NewRecovered}</CardNumber>
+                <CardNumber>{numberFormatter(global.NewRecovered)}</CardNumber>
                 <CardDescription>Registros novos</CardDescription>
               </CardInfo>
             </CardCases>

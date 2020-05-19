@@ -18,6 +18,7 @@ import {
 
 import GoBack from "../../components/GoBack";
 import SubTitle from "../../components/SubTitle";
+import numberFormatter from '../../utils/formatter'
 
 export default DetailsCountry = () => {
   const route = useRoute();
@@ -44,12 +45,12 @@ export default DetailsCountry = () => {
 
             <CardCases>
               <CardInfo>
-                <CardNumber>{detail.TotalConfirmed}</CardNumber>
+                <CardNumber>{numberFormatter(detail.TotalConfirmed)}</CardNumber>
                 <CardDescription>Acumulados</CardDescription>
               </CardInfo>
 
               <CardInfo>
-                <CardNumber>{detail.NewConfirmed}</CardNumber>
+                <CardNumber>{numberFormatter(detail.NewConfirmed)}</CardNumber>
                 <CardDescription>Registros novos</CardDescription>
               </CardInfo>
             </CardCases>
@@ -60,12 +61,12 @@ export default DetailsCountry = () => {
 
             <CardCases>
               <CardInfo>
-                <CardNumber>{detail.TotalDeaths}</CardNumber>
+                <CardNumber>{numberFormatter(detail.TotalDeaths)}</CardNumber>
                 <CardDescription>Acumulados</CardDescription>
               </CardInfo>
 
               <CardInfo>
-                <CardNumber>{detail.NewDeaths}</CardNumber>
+                <CardNumber>{numberFormatter(detail.NewDeaths)}</CardNumber>
                 <CardDescription>Registros novos</CardDescription>
               </CardInfo>
             </CardCases>
@@ -76,12 +77,12 @@ export default DetailsCountry = () => {
 
             <CardCases>
               <CardInfo>
-                <CardNumber>{detail.TotalRecovered}</CardNumber>
+                <CardNumber>{numberFormatter(detail.TotalRecovered)}</CardNumber>
                 <CardDescription>Acumulados</CardDescription>
               </CardInfo>
 
               <CardInfo>
-                <CardNumber>{detail.NewRecovered}</CardNumber>
+                <CardNumber>{numberFormatter(detail.NewRecovered)}</CardNumber>
                 <CardDescription>Registros novos</CardDescription>
               </CardInfo>
             </CardCases>
