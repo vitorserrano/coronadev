@@ -58,6 +58,8 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
+---
+
 <h4 align="center">
     Feito com 💜 by <a href="https://www.linkedin.com/in/vitor-serrano/" target="_blank">Vitor Serrano</a>
 </h4>
